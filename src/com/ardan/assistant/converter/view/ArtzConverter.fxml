@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ardan.assistant.converter.view.ArtzConverterController">
+   <children>
+      <SplitPane dividerPositions="0.275" layoutX="7.0" layoutY="6.0" prefHeight="575.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Accordion prefHeight="573.0" prefWidth="184.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <panes>
+                      <TitledPane animated="false" text="CONVERSION LIST">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <RadioButton fx:id="radioFilterHex" mnemonicParsing="false" selected="true" text="Filter Hex">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="conversionGroup" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radioParseByte" mnemonicParsing="false" text="Parse Byte" toggleGroup="$conversionGroup" />
+                                          <RadioButton fx:id="radioParseWord" mnemonicParsing="false" text="Parse Word" toggleGroup="$conversionGroup" />
+                                          <RadioButton fx:id="radioAsciiToHex" mnemonicParsing="false" text="ASCII to Hex" toggleGroup="$conversionGroup" />
+                                          <RadioButton fx:id="radioHexToAscii" mnemonicParsing="false" text="Hex to ASCII" toggleGroup="$conversionGroup" />
+                                          <RadioButton fx:id="radioHexToBinary" mnemonicParsing="false" text="Hex to Binary" toggleGroup="$conversionGroup" />
+                                          <RadioButton fx:id="radioHexToDecimal" mnemonicParsing="false" text="Hex to Decimal" toggleGroup="$conversionGroup" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                      </TitledPane>
+                      <TitledPane animated="false" text="untitled 2">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="untitled 3">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="50.0" layoutY="129.0" orientation="VERTICAL" prefHeight="573.0" prefWidth="558.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TextArea fx:id="areaInput" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                              <Button fx:id="btnInput" alignment="BASELINE_LEFT" layoutY="2.0" mnemonicParsing="false" onAction="#handlePasteInputButton" prefHeight="25.0" prefWidth="464.0" text="Paste INPUT:   0 [H00] char;   0 [H00] byte" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="2.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnClear" layoutY="2.0" mnemonicParsing="false" onAction="#handleClearButton" prefHeight="25.0" prefWidth="67.0" text="Clear" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TextArea fx:id="areaOutput" editable="false" layoutX="14.0" layoutY="29.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                              <Button fx:id="btnOutput" alignment="BASELINE_LEFT" layoutY="2.0" mnemonicParsing="false" onAction="#handleCopyOutputButton" prefHeight="25.0" prefWidth="366.0" text="Copy OUTPUT:   0 [H00] char;   0 [H00] byte" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="2.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnUp" layoutX="485.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleUpButton" prefHeight="25.0" prefWidth="67.0" text="Up" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnProcess" layoutX="416.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleProcessButton" prefHeight="25.0" prefWidth="120.0" text="PROCESS" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="2.0">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
